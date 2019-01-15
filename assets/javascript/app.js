@@ -4,6 +4,8 @@ $(document).ready(function() {
 
     $(document).on("click", ".button", function() {
         console.log("click");
+        $(".hidden-box").css("display", "block");
+        $(".button").css("display", "none");
         
     })
 
