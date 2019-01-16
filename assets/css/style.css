@@ -7,6 +7,7 @@
     text-align: center;
     padding: 15px;
     margin: 15px;
+    border-radius: 5px;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
     font-size: 25px;
     text-align: center;
     min-height: 500px;
+    border-radius: 5px;
 }
 
 .hidden-box {
@@ -39,7 +41,7 @@ body {
     font-size: 20px;
 }
 
-.button {
+.start-button {
     font-family: 'IM Fell English SC', serif;
     background-color: #7d869c;
     margin-top: 225px;
@@ -50,9 +52,27 @@ body {
     font-size: 20px;
     font-weight: 700;
     cursor: pointer;
+    border-radius: 5px;
 }
 
-.button:hover {
+.start-button:hover {
+    background-color: #5e6574;
+}
+
+.submit-button {
+    font-family: 'IM Fell English SC', serif;
+    background-color: #7d869c;
+    border: solid 1px #000000;
+    color: #000000;
+    padding: 15px 25px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.submit-button:hover {
     background-color: #5e6574;
 }
 
