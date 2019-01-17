@@ -29,6 +29,12 @@ $(document).ready(function() {
 
             if (time === 0) {
 
+                $(".hidden-box").css("display", "none");
+
+                $(".results-box").css("display", "block");
+
+                $(".history-lesson").css("display", "block");
+
                 countCorrectAnswers();
 
                 displayResults();
@@ -65,7 +71,7 @@ $(document).ready(function() {
 
         var results = $(slt);
 
-        if (results[0].value === 0) {
+        if (results.length === 0) {
             return 0;
         }
 
@@ -131,6 +137,8 @@ $(document).ready(function() {
 
         $(".results-box").css("display", "block");
 
+        $(".history-lesson").css("display", "block");
+
         countCorrectAnswers();
 
         displayResults();
@@ -143,5 +151,7 @@ $(document).ready(function() {
 })
 
 function newFunction(timer) {
+
     timer();
+
 }
