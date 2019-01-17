@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var clockRunning = false;
-    var time = 10;
+    var time = 120;
     var intervalId = 0;
 
     //"start game" button sets the game up: starts timer at 2 minutes (120 sec), and populates 10 questions with 4 multiple choice answers each, and a submit button.
@@ -29,6 +29,9 @@ $(document).ready(function() {
 
             if (time === 0) {
                 countCorrectAnswers();
+
+                displayResults();
+
                 clearInterval(intervalId);
             }
 
@@ -75,31 +78,57 @@ $(document).ready(function() {
     var incorrectAnswer = 0;
     var answers = {
         "yearSunk": "1912",
-        "captain": "Edward John Smith"
-    }
+        "captain": "Edward John Smith",
+        "yearFound": "1985",
+        "whoFound": "Robert Ballard",
+        "howSunk": "An iceberg",
+        "howDeep": "2.5 miles",
+        "soulsLost": "1500",
+        "funnel": "True"
+}
 
     function countCorrectAnswers() {
 
 
         var questions = ["yearSunk", "captain", "yearFound", "whoFound", "howSunk", "howDeep", "soulsLost", "funnel"];
         for (var i = 0; i < questions.length; i++) {
-            if (checkAnswer(questions[i]) === 0) {
-                notAnswered++
+            if (checkAnswer(questions[i]) < 0) {
+                incorrectAnswer++
             } else if (checkAnswer(questions[i]) > 0) {
                 correctAnswer++
             } else {
-                incorrectAnswer++
+                notAnswered++
             }
         }
         console.log(correctAnswer);
         console.log(incorrectAnswer);
+        console.log(notAnswered);
 
 
     }
 
+    function displayResults() {
+
+        $(".correct-answers").text("Correct Answers: " + correctAnswer);
+
+        $(".incorrect-answers").text("Incorrect Answers: " + incorrectAnswer);
+
+        $(".unanswered").text("Unanswered Questions: " + notAnswered);
+
+    }
+
     $(document).on("click", ".submit-button", function() {
+
+        $(".hidden-box").css("display", "none");
+
+        $(".results-box").css("display", "block");
+
         countCorrectAnswers();
+
+        displayResults();
+
         clearInterval(intervalId);
+
     });
 
 

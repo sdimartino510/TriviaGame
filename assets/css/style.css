@@ -93,6 +93,11 @@ body {
     transform: scale(1.1);
 }
 
+.results-box {
+    padding-top: 165px;
+    display: none;
+}
+
 @media (max-width: 725px) {
     .main-body {
         margin: 15px 100px 0 100px;
