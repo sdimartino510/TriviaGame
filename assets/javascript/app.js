@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
+    //part of timer function
+
     var clockRunning = false;
-    var time = 121;
+    var time = 91;
     var intervalId = 0;
 
     function update() {
@@ -9,6 +11,8 @@ $(document).ready(function() {
         $(".timer").text("Time Remaining: " + time + " seconds");
 
     }
+
+    //starts game by revealing questions and starting timer, also hides start button
 
     $(document).on("click", ".start-button", function() {
 
@@ -21,6 +25,8 @@ $(document).ready(function() {
         update();
         
     })
+
+    //ends game if timer runs out
     
     function timer() {
 
@@ -61,6 +67,8 @@ $(document).ready(function() {
 
     update();
 
+    //checks if questions are answered correctly, incorrectly, or not answered and returns a value for each
+
     function checkAnswer(name) {
 
         // Positive number == answered correctly.
@@ -72,16 +80,22 @@ $(document).ready(function() {
         var results = $(slt);
 
         if (results.length === 0) {
+
             return 0;
-        }
 
+        }
+        
         if (results[0].value === answers[name]) {
-            return 1;
-        }
 
+            return 1;
+
+        }
+        
         return -1;
 
     }
+
+    //"answer key"
 
     var notAnswered = 0;
     var correctAnswer = 0;
@@ -97,29 +111,38 @@ $(document).ready(function() {
         "funnel": "True"
     }
 
+    //tallies correct, incorrect, and unanswered questions for later DOM update
+
     function countCorrectAnswers() {
 
         var questions = ["yearSunk", "captain", "yearFound", "whoFound", "howSunk", "howDeep", "soulsLost", "funnel"];
 
         for (var i = 0; i < questions.length; i++) {
 
+            //checks if result of checkAnswer() is a negative number and increments incorrectAnswer
+
             if (checkAnswer(questions[i]) < 0) {
+
                 incorrectAnswer++
 
+            //checks if result of checkAnswer() is a positive number and increments correctAnswer
+
             } else if (checkAnswer(questions[i]) > 0) {
+
                 correctAnswer++
 
+            //otherwise increments notAnswered
+
             } else {
+
                 notAnswered++
 
             }
         }
 
-        console.log(correctAnswer);
-        console.log(incorrectAnswer);
-        console.log(notAnswered);
-
     }
+
+    //function to update the DOM with game score
 
     function displayResults() {
 
@@ -130,6 +153,8 @@ $(document).ready(function() {
         $(".unanswered").text("Unanswered Questions: " + notAnswered);
 
     }
+
+    //reveals the end of game page with game score and factoids, also stops timer
 
     $(document).on("click", ".submit-button", function() {
 
@@ -149,6 +174,8 @@ $(document).ready(function() {
 
 
 })
+
+//part of timer function
 
 function newFunction(timer) {
 
