@@ -12,4 +12,4 @@ https://webdevserg.io/TriviaGame/
 6. Check your score, and then scroll down to learn a bit about this magnificent ship.
 
 # Credits
-This game was written from scratch by Sergio Di Martino as a homework assignment for UC Berkeley Extension Coding Bootcamp, Full Stack Development. It uses HTML, CSS, JavaScript, and jQuery. Special thanks to @eulersIDcrisis, Becky Thipavong, and Jen Stokes for their assistance when I was stuck. Questions or comments about this game (including any corrections if I got any of the trivia wrong) can be directed to [Sergio Di Martino](mailto:sdimartino@gmail.com).
+This game was written from scratch by Sergio Di Martino as a homework assignment for UC Berkeley Extension Coding Bootcamp, Full Stack Development. It uses HTML, CSS, JavaScript, and jQuery. Special thanks to @eulersIDcrisis, Becky Thipavong, and Jen Stokes for their assistance when I was stuck. Questions or comments about this game (including any corrections if I got any of the trivia wrong) can be directed to [Sergio Di Martino](mailto:sergio@webdevserg.io).
